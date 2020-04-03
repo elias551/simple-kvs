@@ -1,0 +1,18 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "extends": [
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "curly": ["error", "all"],
+    "quotes": [2, "double"]
+  }
+}
