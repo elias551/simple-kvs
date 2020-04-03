@@ -1,7 +1,36 @@
 # simple-kvs
 Simple key value store for the browser, based on indexed db, promise-based + TS friendly.
 
-Every operations are described in the [test suite](./__tests__/index.test.ts) :
+## Why another lib ??
+
+Indexed db is very handy for storing large objects, but the API is quite cumbersome when you only need to store simple data.
+
+Local storage only allows a little amount of data and only stores string. The API is callback based.
+
+simple-kvs is a simple wrapper around IndexedDB, which defines a single table (`kv-store`) indexing a key column.
+
+## API
+
+To create a database just call
+```js
+getKeyValueStorage(dbName: string)
+```
+
+which returns a promise with the store object:
+
+```ts
+export interface KeyValueStore {
+  get: <T>(key: string) => Promise<T | undefined>
+  getKeys: () => Promise<string[]>
+  set: (key: string, value: any) => Promise<void>
+  remove: (key: string) => Promise<void>
+  clear: () => Promise<void>
+}
+
+```
+
+
+Every operations that can be performed are described in the [test suite](./__tests__/index.test.ts) :
 
 ```js
 
