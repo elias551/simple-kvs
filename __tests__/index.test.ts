@@ -1,9 +1,4 @@
-import {
-  getKeyValueStore,
-  removeKeyValueStore,
-  KeyValueStore,
-  setIndexedDb,
-} from "../src"
+import { getKeyValueStore, KeyValueStore, setIndexedDb } from "../src"
 //@ts-ignore
 import * as fakeDb from "fake-indexeddb"
 
@@ -14,11 +9,6 @@ beforeEach(async () => {
   setIndexedDb(fakeDb)
   dbName = `db-${new Date().getTime()}`
   store = await getKeyValueStore(dbName)
-})
-
-afterEach(async () => {
-  removeKeyValueStore(dbName)
-  dbName = ""
 })
 
 test("should return undefined for unknown keys", async () => {

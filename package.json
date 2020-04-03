@@ -1,12 +1,12 @@
 {
   "name": "simple-kvs",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Simple key value store for the browser, based on indexed db, promise-based + TS friendly",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest --config jestconfig.json --runInBand",
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint ./src --ext .ts",
     "format": "npm run lint -- --fix",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
