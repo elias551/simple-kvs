@@ -15,7 +15,7 @@ Indexed db is very handy for storing large objects, but the API is quite cumbers
 
 Local storage only allows a little amount of data and only stores string. The API is callback based.
 
-simple-kvs is a simple wrapper around IndexedDB, which defines a single table (`kv-store`) indexing a key column.
+simple-kvs is a simple wrapper around IndexedDB, which defines a single table (`kv-store`) indexing a key column. It voluntarily simplifies a lot the features of indexedDb, if you need more complex features (advanced indexing, filtering, defining multiple tables), take a look at [Dexie.js](https://github.com/dfahlander/Dexie.js/)
 
 ## API
 
