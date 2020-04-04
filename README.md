@@ -78,7 +78,7 @@ test("should remove all keys after clear", async () => {
   await store.set("key1", 1)
   await store.set("key2", 2)
   await store.clear()
-  const value = await store.get("key")
+  const value = await store.get("key1")
   expect(value).toBeUndefined()
   expect(await store.getKeys()).toEqual([])
 })
