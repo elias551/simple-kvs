@@ -21,7 +21,13 @@ simple-kvs is a simple wrapper around IndexedDB, which defines a single table (`
 
 To create a database just call
 ```js
-getKeyValueStorage(dbName: string)
+import { getKeyValueStorage } from "simple-kvs"
+
+getKeyValueStorage(dbName).then(store => {
+  // store can be used !
+}).catch(e => {
+  // store is unavailable :(
+})
 ```
 
 which returns a promise with the store object:
