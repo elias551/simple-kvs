@@ -1,7 +1,15 @@
 # simple-kvs
 Simple key value store for the browser, based on indexed db, promise-based + TS friendly.
 
-## Why another lib ??
+## How to install
+
+`simple-kvs` is available on npm:
+
+```
+npm install simple-kvs
+```
+
+## Why another lib ?
 
 Indexed db is very handy for storing large objects, but the API is quite cumbersome when you only need to store simple data.
 
