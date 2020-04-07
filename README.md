@@ -73,6 +73,15 @@ test("should return keys after save", async () => {
   expect(value).toEqual(["key1", "key2"])
 })
 
+test("should update existing key with new value", async () => {
+  await store.set("key", 1)
+  await store.set("key", 2)
+  const keys = await store.getKeys()
+  const value = await store.get("key")
+  expect(keys).toEqual(["key"])
+  expect(value).toEqual(2)
+})
+
 test("should remove keys after remove", async () => {
   await store.set("key", 1)
   await store.remove("key")
